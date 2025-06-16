@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, TextField, Button, List, ListItem, ListItemText, Checkbox, FormControlLabel } from '@mui/material';
+import { Typography, TextField, Button, List, ListItem, ListItemText, Checkbox, FormControlLabel, Paper, Box } from '@mui/material';
 import axios from 'axios';
 
 const Seller = () => {
@@ -50,8 +50,8 @@ const Seller = () => {
     };
 
     return (
-        <div>
-            <Typography variant="h6" gutterBottom>
+        <Paper elevation={3} sx={{ p: 3 }}>
+            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
                 Seller Inventory Management
             </Typography>
             <TextField
@@ -78,7 +78,7 @@ const Seller = () => {
                 }
                 label="Available for sale"
             />
-            <Button variant="contained" color="primary" onClick={addProduct}>
+            <Button variant="contained" color="primary" onClick={addProduct} sx={{ mb: 2 }}>
                 Add Product
             </Button>
             <List>
@@ -91,7 +91,7 @@ const Seller = () => {
                     </ListItem>
                 ))}
             </List>
-        </div>
+        </Paper>
     );
 };
 

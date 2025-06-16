@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, TextField, Button, List, ListItem, ListItemText } from '@mui/material';
+import { Typography, TextField, Button, List, ListItem, ListItemText, Paper, Box } from '@mui/material';
 import axios from 'axios';
 
 const Buyer = () => {
@@ -44,8 +44,8 @@ const Buyer = () => {
   };
 
   return (
-    <div>
-      <Typography variant="h6" gutterBottom>
+    <Paper elevation={3} sx={{ p: 3 }}>
+      <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
         Buyer - Search and Buy Products
       </Typography>
       <TextField
@@ -60,12 +60,12 @@ const Buyer = () => {
           <ListItem key={product._id} button onClick={() => buyProduct(product)}>
             <ListItemText
               primary={product.name}
-            secondary={`Price: $${product.price} - ${product.available ? 'Available' : 'Unavailable'}`}
+              secondary={`Price: $${product.price} - ${product.available ? 'Available' : 'Unavailable'}`}
             />
           </ListItem>
         ))}
       </List>
-    </div>
+    </Paper>
   );
 };
 
